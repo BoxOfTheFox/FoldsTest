@@ -51,21 +51,6 @@ class MainActivity : AppCompatActivity() {
 
         obtainWindowMetrics()
         onWindowLayoutInfoChange(windowInfoRepository)
-
-//        viewBinding.videoView.setControllerVisibilityListener {
-//            if (it == PlayerControlView.VISIBLE) {
-//                Log.e("STEFAN", "visible")
-//                Log.e("STEFAN", "${viewBinding.playerControlView.visibility}")
-//                findViewById<PlayerControlView>(R.id.player_control_view).visibility = PlayerControlView.VISIBLE
-//                Log.e("STEFAN", "${viewBinding.playerControlView.visibility}")
-//            }
-//            else {
-//                Log.e("STEFAN", "invisible")
-//                Log.e("STEFAN", "${viewBinding.playerControlView.visibility}")
-//                findViewById<PlayerControlView>(R.id.player_control_view).visibility = PlayerControlView.GONE
-//                Log.e("STEFAN", "${viewBinding.playerControlView.visibility}")
-//            }
-//        }
     }
 
     private fun obtainWindowMetrics() {
@@ -118,13 +103,11 @@ class MainActivity : AppCompatActivity() {
     private fun centerPlayer() {
         ConstraintLayout.getSharedValues().fireNewValue(R.id.fold, 0)
         viewBinding.videoView.useController = true // use embedded controls
-        viewBinding.controlLayout.visibility = View.GONE
     }
 
     private fun foldPlayer(fold: Int) {
         ConstraintLayout.getSharedValues().fireNewValue(R.id.fold, fold)
         viewBinding.videoView.useController = false // use custom controls
-        viewBinding.controlLayout.visibility = View.VISIBLE
     }
 
     /**

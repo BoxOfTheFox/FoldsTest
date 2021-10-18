@@ -61,22 +61,17 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content" />
 
-    <LinearLayout
-        android:id="@+id/controlLayout"
+    <com.google.android.exoplayer2.ui.PlayerControlView
+        android:id="@+id/player_control_view"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:show_timeout="0"
         app:layout_constraintTop_toBottomOf="@+id/fold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <com.google.android.exoplayer2.ui.PlayerControlView
-            android:id="@+id/player_control_view"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
-            app:show_timeout="0"/>
-    </LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 <!--    <View-->
 <!--        android:id="@+id/folding_feature"-->
