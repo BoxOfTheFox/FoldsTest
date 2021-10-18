@@ -118,13 +118,13 @@ class MainActivity : AppCompatActivity() {
     private fun centerPlayer() {
         ConstraintLayout.getSharedValues().fireNewValue(R.id.fold, 0)
         viewBinding.videoView.useController = true // use embedded controls
-//        viewBinding.playerControlView.visibility = PlayerControlView.GONE
+        viewBinding.controlLayout.visibility = View.GONE
     }
 
     private fun foldPlayer(fold: Int) {
         ConstraintLayout.getSharedValues().fireNewValue(R.id.fold, fold)
         viewBinding.videoView.useController = false // use custom controls
-//        viewBinding.playerControlView.visibility = PlayerControlView.VISIBLE
+        viewBinding.controlLayout.visibility = View.VISIBLE
     }
 
     /**
